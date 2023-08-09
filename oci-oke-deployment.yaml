@@ -15,7 +15,7 @@ spec:
         app: sample-oke-canary-app
     spec:
       containers:
-      - image: ams.ocir.io/axh1wuvhagpg/oci-bluegreen-oke-poc:${BUILDRUN_HASH}
+      - image: ams.ocir.io/axh1wuvhagpg/oci-canary-oke-poc:${BUILDRUN_HASH}
         #imagePullPolicy: Always 
         name: sample-oke-canary-app
         ports:
