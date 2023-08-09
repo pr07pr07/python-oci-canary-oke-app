@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: sample-oke-canary-app
   name: sample-oke-canary-app-deployment
 spec:
   replicas: 3
