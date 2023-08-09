@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-oke-canary-app-service
+  annotations: 
+    service.beta.kubernetes.io/oci-load-balancer-shape: "10Mbps"
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: sample-oke-canary-app
