@@ -43,14 +43,15 @@ steps:
       docker build --pull --rm -t oke_app_base .      
      
 outputArtifacts:
-  - name: oke_app_base
+  - name: oke_container_image
     type: DOCKER_IMAGE
-    # this location tag doesn't effect the tag used to deliver the container image
-    # to the Container Registry
     location: oke_app_base:latest
-
   - name: oke_deploy_manifest
     type: BINARY
-    # this location tag doesn't effect the tag used to deliver the container image
-    # to the Container Registry
     location: ${OCI_PRIMARY_SOURCE_DIR}/oci-oke-deployment.yaml
+  - name: oke_svc_manifest
+    type: BINARY
+    location: ${OCI_PRIMARY_SOURCE_DIR}/oci-oke-svc.yaml
+  - name: oke_ingress_manifest
+    type: BINARY
+    location: ${OCI_PRIMARY_SOURCE_DIR}/oci-oke-ingress.yaml
